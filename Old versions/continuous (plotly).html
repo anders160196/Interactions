@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Interactions</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link href="continuous.css" rel="stylesheet" type="text/css" />
+    <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+  </head>
+  
+  <body>
+    
+    <div class="container">
+      <div class="center">
+        <h1>Continuous</h1>
+      </div>
+    </div>
+    
+    <div style="margin-left: 5%;">
+      <select id="playlist"">
+        <option value="topSongs">Top Songs - Global</option>
+        <option value="michaelJackson">Michael Jackson</option>
+      </select>
+      
+      <select id="mode"">
+        <option value="similarity">Similarity</option>
+        <option value="features">Features</option>
+      </select>
+      
+      <select id="dimensions">
+        <option value="3D">3D</option>
+        <option value="2D">2D</option>
+      </select>
+      
+      <select id="x" disabled>
+        <option hidden selected></option>
+        <option value="feat1">feat1</option>
+        <option value="feat2">feat2</option>
+        <option value="feat3">feat2</option>
+      </select>
+  
+      <select id="y" disabled>
+        <option hidden selected></option>
+        <option value="feat1">feat1</option>
+        <option value="feat2">feat2</option>
+        <option value="feat3">feat2</option>
+      </select>
+  
+      <select id="z" disabled>
+        <option hidden selected></option>
+        <option value="feat1">feat1</option>
+        <option value="feat2">feat2</option>
+        <option value="feat3">feat2</option>
+      </select>
+    </div>
+    
+    <div id="myDiv" class="graph2"></div>
+
+
+    <script src="tsne.js"></script>
+    <script type="module" src="continuous (plotly).js"></script>
+
+  </body>
+</html>

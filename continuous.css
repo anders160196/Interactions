@@ -1,0 +1,13 @@
+.graph {   
+  text-align: center;
+  margin: 0px;
+  padding-top: 0px;
+  top: 200px;
+  height: calc(100vh - 100px) !important;
+  width: 100%
+}
+
+.js-plotly-plot .plotly .modebar {
+    transform: translateY(100%);
+}
+

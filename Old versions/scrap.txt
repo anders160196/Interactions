@@ -1,0 +1,157 @@
+=========== Image Annotation with client library ===========
+// Imports the Google Cloud client library
+const vision = require('@google-cloud/vision');
+
+// Creates a client
+const client = new vision.ImageAnnotatorClient({
+  keyFilename: "./APIkey.json",
+});
+
+async function detectFaces() {
+  /**
+   * TODO(developer): Uncomment the following line before running the sample.
+   */
+  const fileName = 'download.jpeg';
+
+  const [result] = await client.faceDetection(fileName);
+  const faces = result.faceAnnotations;
+  console.log('Faces:');
+  faces.forEach((face, i) => {
+    console.log(`  Face #${i + 1}:`);
+    console.log(`    Joy: ${face.joyLikelihood}`);
+    console.log(`    Anger: ${face.angerLikelihood}`);
+    console.log(`    Sorrow: ${face.sorrowLikelihood}`);
+    console.log(`    Surprise: ${face.surpriseLikelihood}`);
+  });
+}
+detectFaces();
+
+
+=========== TOGGLE PLAY ===========
+<button id="togglePlay">Toggle Play</button>
+
+document.getElementById('togglePlay').onclick = function() {
+  document.getElementById("p1").innerHTML = audio.paused;
+  if (audio.paused) {
+    audio.play();
+  }
+  else {
+    audio.pause();
+  }
+};
+
+
+=========== CANVAS ===========
+<canvas id="myCanvas" width="1500" height="1500"></canvas>
+
+function drawPoint(context, x, y, label, color, size) {
+  if (color == null) {
+  	color = '#000';
+  }
+  if (size == null) {
+    size = 5;
+  }
+      
+  var radius = 0.5 * size;
+
+  // to increase smoothing for numbers with decimal part
+	var pointX = Math.round(x - radius);
+  var pointY = Math.round(y - radius);
+  
+  context.beginPath();
+  context.fillStyle = color;
+  context.fillRect(pointX, pointY, size, size);
+  context.fill();
+      
+  if (label) {
+    var textX = Math.round(x);
+   	var textY = Math.round(pointY - 5);
+         
+    context.font = 'Italic 14px Arial';
+    context.fillStyle = color;
+    context.textAlign = 'center';
+    context.fillText(label, textX, textY);
+  }
+}
+
+var canvas = document.querySelector('#myCanvas');
+var context = canvas.getContext('2d');
+
+Y.forEach((point, index) => {
+  let x = (point[0]-Xmin)*1500/(Xmax-Xmin);
+  let y = (point[1]-Ymin)*1000/(Ymax-Ymin);
+  name = Object.keys(features)[index];
+  if (name == 'Baby Be Mine' || name == 'In the Closet') {
+    drawPoint(context, x, y, name, 'red', 10);
+  }
+  else {
+    drawPoint(context, x, y, name, 'black', 10);
+  }
+});
+
+
+=========== OTHER ===========
+var img = new Image();
+img.onload = function() {
+    ctx.drawImage(img, 0, 0);
+}
+img.src = "http://upload.wikimedia.org/wikipedia/commons/d/d2/Svg_example_square.svg";
+
+ <canvas id="myCanvas" width="1500" height="1000" 
+style="margin: 10px 10px 10px 10px;background-color: #ffffff;">Your browser does not support the HTML5 canvas tag</canvas>
+
+
+
+=========== PLOTLY ===========
+
+/*
+console.log(outputArray);
+setTimeout(() => {
+  console.log("Delayed for 1 second.");
+  outputArray.sort((a, b) => a[0] - b[0]);
+  console.log(outputArray);
+}, 1000)
+
+function plotPoints(n)  {
+  var plotData = [];
+
+  var X = [];
+  var Y = [];
+  var NAME = [];
+  
+  outputArray.forEach((point, index) => {
+    if (n.includes(index)) {
+      X.push(point[0]);
+      Y.push(point[1]);
+      NAME.push(Object.keys(features)[index]);
+    }
+  });
+  
+  var trace = {
+    x: X,
+    y: Y,
+    mode: 'markers+text',
+    type: 'scatter',
+    name: 'test',
+    hoverinfo: "y+name",
+    text: NAME,
+    textposition: 'top center',
+    textfont: {
+      family:  'Raleway, sans-serif'
+    },
+    marker: {
+      size: 30,
+      line: {
+        width: 2
+      }
+    }
+  };
+  
+  plotData.push(trace);
+  Plotly.newPlot('myDiv', plotData, layout, {responsive: true});
+}
+
+plotPoints([5, 10, 15, 20, 25, 30, 35, 40]);
+*/
+
+//Plotly.newPlot('myDiv', plotData, layout, {responsive: true});

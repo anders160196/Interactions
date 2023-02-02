@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #f5fcff;
+  padding: 0;
+  font-family: "Helvetica Neue",Arial;
+  overflow: hidden;
+  
+  /*
+  overflow: auto;
+  overscroll-behavior: none;
+  */
+}
+
+.navigation {   
+  text-align: center;
+  background-color: white;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 100px;
+  height: 100px;
+  box-shadow: 0px 0px 5px 0px #9acadf;
+  
+}
+
+.header {
+  text-align: center;
+  padding: 10px 25px 10px 25px;
+  color: #000000;
+  font-size: 30px;
+}

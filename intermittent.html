@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Interactions</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link href="global.css" rel="stylesheet" type="text/css" />
+    <link href="intermittent.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+
+    <div class="navigation"><h1 class="header">INTERMITTENT INTERACTION</h1></div>
+
+    <div class="center">
+      
+    
+      <div class="outer"><div class="inner" id="page1">        
+        <p class="large-text">How old are you?</p>
+        <input type="radio" id="age0" name="age" value="0">
+        <label for="age0">0-9</label>
+        <input type="radio" id="age1" name="age" value="10">
+        <label for="age1">10-19</label>
+        <input type="radio" id="age2" name="age" value="20">
+        <label for="age2">20-29</label>
+        <input type="radio" id="age3" name="age" value="30">
+        <label for="age3">30-39</label>
+        <input type="radio" id="age4" name="age" value="40">
+        <label for="age4">40-49</label>
+        <input type="radio" id="age5" name="age" value="50">
+        <label for="age5">50-59</label>
+        <input type="radio" id="age6" name="age" value="60">
+        <label for="age6">60-69</label>
+        <input type="radio" id="age7" name="age" value="70">
+        <label for="age7">70-79</label>
+        <input type="radio" id="age8" name="age" value="80">
+        <label for="age8">80-89</label>
+        <input type="radio" id="age9" name="age" value="90">
+        <label for="age9">90+</label>
+        
+        <br><br><br><br><br><br>
+  
+        <p class="large-text">Select your favorite music genres</p>
+        <input id="pop" type="checkbox" />
+        <label for="pop">Pop</label>
+        <input id="rock" type="checkbox" />
+        <label for="rock">Rock</label>
+        <input id="techno" type="checkbox" />
+        <label for="techno">Techno</label>
+        <input id="jazz" type="checkbox" />
+        <label for="jazz">Jazz</label>
+        <input id="classical" type="checkbox" />
+        <label for="classical">Classical</label>
+        <input id="hip hop" type="checkbox" />
+        <label for="hip hop">Hip Hop</label>
+  
+        <br><br><br><br><br><br>
+        
+        <button class="button-big" type="button" onclick="showPlaylists();">Continue</button>
+      </div></div>
+  
+      <div class="outer"><div class="inner" id="page2" style="display:none">
+        <p class="large-text">Top Recommended Playlists!</p>
+        <p class="small-text">The playlists are custom made for your profile</p>
+        <div id="playlists">
+          <button class="button-square" value="0" type="button">Top Hits of 2020</button>
+          <button class="button-square" value="10" type="button">Al Out 2010s</button>
+          <button class="button-square" value="20" type="button">2000s Mix</button>
+          <button class="button-square" value="30" type="button">90s Party</button>
+          <button class="button-square" value="40" type="button">80s Hits</button>
+          <button class="button-square" value="50" type="button">Danske hits fra 70erne</button>
+          <button class="button-square" value="60" type="button">60s Mix</button>
+          <button class="button-square" value="70" type="button">Soft 50s</button>
+          <button class="button-square" value="80" type="button">All Out 40s</button>
+          <button class="button-square" value="90" type="button">1930s Music</button>
+  
+          <button class="button-square" value="pop" type="button">Pop Mix</button>
+          <button class="button-square" value="pop" type="button">TOP POP</button>
+          <button class="button-square" value="rock" type="button">Rock Classics</button>
+          <button class="button-square" value="rock" type="button">Kick Ass Metal</button>
+          <button class="button-square" value="techno" type="button">Techno Mix</button>
+          <button class="button-square" value="techno" type="button">Techno House Remix</button>
+          <button class="button-square" value="jazz" type="button">Jazz Classics</button>
+          <button class="button-square" value="jazz" type="button">Late Night Jazz</button>
+          <button class="button-square" value="classical" type="button">Classical Essentials</button>
+          <button class="button-square" value="classical" type="button">Dark Academia Classical</button>
+          <button class="button-square" value="hip hop" type="button">Hip Hop Mix</button>
+          <button class="button-square" value="hip hop" type="button">tempo</button>
+        </div>
+      </div></div>
+  
+      <div class="outer"><div class="inner" id="page3" style="display:none">
+        <p id="playlistTitle" class="large-text">...</p>
+        
+        <div class="table">
+          <div class="first-row">
+            <p class="title">Title</p>
+            <p class="artist">Artist</p>
+            <p class="album">Album</p>
+          </div>
+          <div id="populateMe"></div>
+        </div>
+
+        <br><br>
+        
+        <button class="button-big" type="button" onclick="backToPlaylists();">Return</button>
+      </div></div>
+
+    <div>
+
+    <script src="intermittent.js"></script>
+  </body>
+</html>
